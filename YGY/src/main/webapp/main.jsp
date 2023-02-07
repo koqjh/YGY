@@ -14,11 +14,11 @@
 	<table border="1">
 		<tr>			
 			<th>
-				<div id="1inbun" style="width:200px height:200px border: 2px solid black">
+				<div id="1inboon" style="width:200px height:200px border: 2px solid black">
 					<a href="1inboon.jsp" id="1inboon">1인분</a>
 				</div>
 			</th>
-			<th><a href="chickin.jsp"><img id="chickin" src="img/메인페이지/메인페이지 치킨 로고.jpg"></a></th>
+			<th><a href="chickin.jsp"><img id="chicken" src="img/메인페이지/메인페이지 치킨 로고.jpg"></a></th>
 			<th><a href="maratang.jsp"><img id="yangsik" src="img/메인페이지/메인페이지 피자 로고.jpg"></a></th>
 			<th><a href="maratang.jsp"><img id="yangsik" src="img/메인페이지/메인페이지 햄버거 로고.jpg"></a></th>
 		</tr>
@@ -43,7 +43,7 @@
 		<tr>
 			<th><a href="maratang.jsp"><img id="yangsik" src="img/메인페이지/메인페이지 도시락 로고.jpg"></a></th>
 			<th><a href="maratang.jsp"><img id="yangsik" src="img/메인페이지/메인페이지 페스트푸드 로고.jpg"></a></th>
-			<th><a href="maratanglist.jsp"><img id="maratang" src="img/메인페이지/메인페이지 마라탕 로고.jpg"></a></th>
+			<th><a href="maratang.jsp"><img id="maratang" src="img/메인페이지/메인페이지 마라탕 로고.jpg"></a></th>
 			<th><a href="maratang.jsp"><img id="yangsik" src="img/메인페이지/메인페이지 디저트 로고.jpg"></a></th>
 		</tr>
 	</table>

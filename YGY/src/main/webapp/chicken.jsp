@@ -30,6 +30,5 @@
 		<div class="list1"><a href="maratang.jsp">마라탕</a></div>
 		<div class="list1">디저트</div>
 	</div>
-	
 </body>
 </html>
