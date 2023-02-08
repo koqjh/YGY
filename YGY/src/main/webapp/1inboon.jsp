@@ -9,26 +9,91 @@
 </head>
 <body>
 	<div id="list">
-		<div class="list1"><a href="1inboon.jsp">1인분</a></div>
-		<div class="list1"><a href="chicken.jsp">치킨</a></div>
-		<div class="list1">피자</div>
-		<div class="list1">햄버거</div>
-		<div class="list1">족발</div>
-		<div class="list1">돈까스</div>
-		<div class="list1">고기</div>
-		<div class="list1">국수</div>
-		<div class="list1">찌개</div>
-		<div class="list1">아시아</div>
-		<div class="list1">한식</div>
-		<div class="list1">중식</div>
-		<div class="list1">양식</div>
-		<div class="list1">일식</div>
-		<div class="list1">분식</div>
-		<div class="list1">야식</div>
-		<div class="list1">도시락</div>
-		<div class="list1">패스트푸드</div>
-		<div class="list1"><a href="maratang.jsp">마라탕</a></div>
-		<div class="list1">디저트</div>
+		<div id="1inboon">1인분</div>
+		<div id="chicken">치킨</div>
+		<div id="pizza">피자</div>
+		<div id="hamburger">햄버거</div>
+		<div id="pighocks">족발</div>
+		<div id="porkcutlet">돈까스</div>
+		<div id="meat">고기</div>
+		<div id="noodle">국수</div>
+		<div id="stew">찌개</div>
+		<div id="Asia">아시아</div>
+		<div id="korean cuisine">한식</div>
+		<div id="chinese food">중식</div>
+		<div id="form">양식</div>
+		<div id="a solar eclipse">일식</div>
+		<div id="school food">분식</div>
+		<div id="midnight meal">야식</div>
+		<div id="a lunch box">도시락</div>
+		<div id="fast food">패스트푸드</div>
+		<div id="malatang">마라탕</div>
+		<div id="dessert">디저트</div>
 	</div>
+<form>
+	<table border="1">
+		
+	</table>
+</form>
+	
+<script>
+
+const clicks = document.querySelector("#list");
+const divid = clicks.id;
+
+clicks.addEventListener("click", click1);
+
+function click1(event) {
+	let target = event.target;
+	   if(target.id == "1inboon"){
+		   alert("1인분 나왔다");
+	   }else if(target.id == "chicken"){
+		   alert("치느님 등장하셨다.")
+	   }else if(target.id == "pizza"){
+		   alert("피자다.")
+	   }else if(target.id == "hamburger"){
+		   alert("햄 버억.")
+	   }else if(target.id == "pighocks"){
+		   alert("내발.")
+	   }else if(target.id == "porkcutlet"){
+		   alert("날으는 돈까스.")
+	   }else if(target.id == "meat"){
+		   alert("삼겹살에 소주한잔 하고싶노.")
+	   }else if(target.id == "noodle"){
+		   alert("잔치국수 하입시다.")
+	   }else if(target.id == "stew"){
+		   alert("초당순두부짬뽕.")
+	   }else if(target.id == "Asia"){
+		   alert("월남싸이야.")
+	   }else if(target.id == "korean cuisine"){
+		   alert("밥.")
+	   }else if(target.id == "chinese food"){
+		   alert("짱꿜라.")
+	   }else if(target.id == "form"){
+		   alert("이테리 프랑스 봉쥬르.")
+	   }else if(target.id == "a solar eclipse"){
+		   alert("니뽄 사시미 슉슈슉슈슈슉슈슉.")
+	   }else if(target.id == "school food"){
+		   alert("떡볶이 먹고싶다.")
+	   }else if(target.id == "midnight meal"){
+		   alert("야식은 술이랑 같이.")
+	   }else if(target.id == "a lunch box"){
+		   alert("추억의 도시락.")
+	   }else if(target.id == "fast food"){
+		   alert("빨리달리는 음식.")
+	   }else if(target.id == "malatang"){
+		   alert("말라이 탕꿔이.")
+	   }else if(target.id == "dessert"){
+		   alert("소금빵 먹고싶노.")
+	   }
+	   
+	   
+	const xhttp = new XMLHttpRequest();
+	xhttp.onload = function() {
+	}
+	xhttp.open("GET", "ajax_info.txt", true);
+	xhttp.send();
+}
+</script>
 </body>
 </html>
