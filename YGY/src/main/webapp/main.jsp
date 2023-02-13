@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,7 @@
 	<table border="1">
 		<tr>			
 			<th>
-				<div id="1inboon" style="width:200px height:200px border: 2px solid black">
+				<div id="1inboon">
 					<a href="1inboon.jsp" id="1inboon">1인분</a>
 				</div>
 			</th>

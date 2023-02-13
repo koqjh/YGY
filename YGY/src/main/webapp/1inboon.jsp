@@ -8,27 +8,32 @@
 <link rel="stylesheet" href="allow.css">
 </head>
 <body>
+	<div>
+		<input type="button" value="로그인" onclick="login()">
+	</div>
 	<div id="list">
-		<div id="1inboon">1인분</div>
-		<div id="chicken">치킨</div>
-		<div id="pizza">피자</div>
-		<div id="hamburger">햄버거</div>
-		<div id="pighocks">족발</div>
-		<div id="porkcutlet">돈까스</div>
-		<div id="meat">고기</div>
-		<div id="noodle">국수</div>
-		<div id="stew">찌개</div>
-		<div id="Asia">아시아</div>
-		<div id="korean cuisine">한식</div>
-		<div id="chinese food">중식</div>
-		<div id="form">양식</div>
-		<div id="a solar eclipse">일식</div>
-		<div id="school food">분식</div>
-		<div id="midnight meal">야식</div>
-		<div id="a lunch box">도시락</div>
-		<div id="fast food">패스트푸드</div>
-		<div id="malatang">마라탕</div>
-		<div id="dessert">디저트</div>
+		<ul>
+			<li id="1inboon">1인분</li>
+			<li id="chicken">치킨</li>
+			<li id="pizza">피자</li>
+			<li id="hamburger">햄버거</li>
+			<li id="pighocks">족발</li>
+			<li id="porkcutlet">돈까스</li>
+			<li id="meat">고기</li>
+			<li id="noodle">국수</li>
+			<li id="stew">찌개</li>
+			<li id="Asia">아시아</li>
+			<li id="korean cuisine">한식</li>
+			<li id="chinese food">중식</li>
+			<li id="form">양식</li>
+			<li id="a solar eclipse">일식</li>
+			<li id="school food">분식</li>
+			<li id="midnight meal">야식</li>
+			<li id="a lunch box">도시락</li>
+			<li id="fast food">패스트푸드</li>
+			<li id="malatang">마라탕</li>
+			<li id="dessert">디저트</li>
+		</ul>
 	</div>
 <form>
 	<table border="1">
@@ -37,6 +42,10 @@
 </form>
 	
 <script>
+function login(){
+	alert("나와라잇");
+	window.open("registpop.jsp");
+}
 
 const clicks = document.querySelector("#list");
 const divid = clicks.id;
