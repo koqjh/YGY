@@ -44,7 +44,7 @@
 <script>
 function login(){
 	alert("나와라잇");
-	window.open("registpop.jsp");
+	window.open("loginpop.jsp");
 }
 
 const clicks = document.querySelector("#list");

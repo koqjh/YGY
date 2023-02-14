@@ -13,7 +13,7 @@
 	<input type="text" id="name" placeholder="이름"><br>
 	<input type="text" id="tel" placeholder="전화번호 - 빼고 적어주세요"><br>
 	<input type="text" id="address" placeholder="주소"><br>
-	<input type="button" value="회원가입"><br>
+	<input type="submit" value="회원가입"><br>
 	<a href="registpop.jsp">일반 회원가입</a> /
 	<a href="bossregistpop.jsp">사장님 회원가입</a>
 </form>
