@@ -2,6 +2,7 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import VO.BossVO;
@@ -43,5 +44,28 @@ public class RegDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public int idcheck(String id) {
+		Connection con = DBcon.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		int result = 0;
+		
+		String query = "SELECT COUNT(*) FROM member WHERE id=?";
+		
+		try {
+			stmt = con.prepareStatement(query);
+			stmt.setString(1, id);
+			
+			rs = stmt.executeQuery();
+			rs.next();
+			result = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+		
 	}
 }
