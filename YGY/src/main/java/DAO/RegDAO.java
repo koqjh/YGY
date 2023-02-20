@@ -14,12 +14,11 @@ public class RegDAO {
 		
 		PreparedStatement stmt;
 		try {
-			stmt = con.prepareStatement("INSERT INTO person_tbl(id, pw, name, tel, address) VALUES(?, ?, ?, ?, ?)");
+			stmt = con.prepareStatement("INSERT INTO person_tbl(id, pw, name, tel) VALUES(?, ?, ?, ?)");
 			stmt.setString(1, vo.getId());
 			stmt.setString(2, vo.getPw());
 			stmt.setString(3, vo.getName());
 			stmt.setInt(4, vo.getTel());
-			stmt.setString(5, vo.getAddress());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -33,12 +32,11 @@ public class RegDAO {
 		PreparedStatement stmt;
 		
 		try {
-			stmt = con.prepareStatement("INSERT INTO boss_tbl(id, pw, name, tel, address) VALUES(?, ?, ?, ?, ?)");
+			stmt = con.prepareStatement("INSERT INTO boss_tbl(id, pw, name, tel) VALUES(?, ?, ?, ?)");
 			stmt.setString(1, vo.getId());
 			stmt.setString(2, vo.getPw());
 			stmt.setString(3, vo.getName());
 			stmt.setInt(4, vo.getTel());
-			stmt.setString(5, vo.getAddress());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -53,19 +51,42 @@ public class RegDAO {
 		
 		int result = 0;
 		
-		String query = "SELECT COUNT(*) FROM member WHERE id=?";
+		String query = "SELECT COUNT(*) FROM person_tbl WHERE id=?";
 		
 		try {
 			stmt = con.prepareStatement(query);
-			stmt.setString(1, id);
-			
+			stmt.setString(1, id);			
 			rs = stmt.executeQuery();
+			System.out.println("오겠냐");
 			rs.next();
-			result = rs.getInt(1);
+			result = rs.getInt("COUNT(*)");
+			System.out.println("result : " + result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return result;
 		
+	}
+	
+	public int login(String id, String pw) {
+		Connection con = DBcon.getConnection();
+		ResultSet rs = null;
+		
+		int result = 0;
+		
+		PreparedStatement stmt;
+		try {
+			stmt = con.prepareStatement("SELECT * FROM person_tbl WHERE id=? AND pw=?");
+			stmt.setString(1, id);
+			stmt.setString(2, pw);
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				result = 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return result;
 	}
 }

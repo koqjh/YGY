@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String id = (String)session.getAttribute("id"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,7 @@
 <body>
 <h1>요기요</h1>
 <hr>
+<%=id %>/<a href="">로그아웃</a>
 <form>
 	<table border="1">
 		<tr>			

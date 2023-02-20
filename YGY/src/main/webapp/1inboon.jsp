@@ -44,7 +44,7 @@
 <script>
 function login(){
 	alert("나와라잇");
-	window.open("loginpop.jsp");
+	window.open("loginpop.jsp", "width=450, height=200");
 }
 
 const clicks = document.querySelector("#list");

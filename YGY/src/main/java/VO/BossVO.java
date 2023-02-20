@@ -8,5 +8,4 @@ public class BossVO {
 	private String pw;
 	private String name;
 	private int tel;
-	private String address;
 }

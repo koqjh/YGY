@@ -8,5 +8,4 @@ public class PersonVO {
 	private String pw;
 	private String name;
 	private int tel;
-	private String address;
 }

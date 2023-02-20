@@ -24,14 +24,12 @@ public class RegBossServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String _tel = request.getParameter("tel");
 		int tel = Integer.parseInt(_tel);
-		String address = request.getParameter("address");
 		
 		BossVO vo = new BossVO();
 		vo.setId(id);
 		vo.setPw(pw);
 		vo.setName(name);
 		vo.setTel(tel);
-		vo.setAddress(address);
 		System.out.println(name);
 		
 		dao.bossInsert(vo);
