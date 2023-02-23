@@ -10,9 +10,11 @@
 <link rel="stylesheet" href="allow.css">
 </head>
 <body>
-<%=menu %>
+<h1><a href="main.jsp">요기요</a></h1>
+<hr>
 	<div>
 		<input type="button" value="로그인" onclick="login()">
+		<input type="hidden" id="menu" value="<%=menu %>">
 	</div>
 	<div id="list">
 		<ul>
@@ -40,7 +42,14 @@
 	</div>
 <form>
 	<table border="1">
+		<thead>
+		<tr>
+			<th>타입</th><th>업체명</th><th>업체전화번호</th>
+		</tr>
+		</thead>
+		<tbody id="menulist">
 		
+		</tbody>
 	</table>
 </form>
 	
@@ -48,6 +57,22 @@
 function login(){
 	alert("나와라잇");
 	window.open("loginpop.jsp", "width=450, height=200");
+}
+
+const menulist = document.querySelector("#menu").value;
+
+function listnow(){
+	const xhttp = new XMLHttpRequest();
+	xhttp.onload = function(){
+		let obj = JSON.parse(this.responseText);
+		alert(obj);
+		for(let i=0; i < obj.length; i++){
+			menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].companytel + "</td></tr>";
+		}
+	}
+	
+	xhttp.open("GET", "MenuListServlet?type=" + menulist);
+	xhttp.send();
 }
 
 const clicks = document.querySelector("#list");
@@ -106,6 +131,8 @@ function click1(event) {
 	xhttp.open("GET", "ajax_info.txt", true);
 	xhttp.send();
 }
+
+
 </script>
 </body>
 </html>

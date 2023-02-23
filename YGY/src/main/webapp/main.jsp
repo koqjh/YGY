@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<h1>요기요</h1>
+<h1><a href="main.jsp">요기요</a></h1>
 <hr>
 <a href="main.jsp" onclick="login()">로그인</a>
 <%=id %>/<a href="">로그아웃</a>
