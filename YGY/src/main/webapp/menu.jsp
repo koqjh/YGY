@@ -41,10 +41,11 @@
 		</ul>
 	</div>
 <form>
+	<input type="hidden" id="view" value="1">
 	<table border="1">
 		<thead>
 		<tr>
-			<th>타입</th><th>업체명</th><th>업체전화번호</th>
+			<th>타입</th><th>업체명</th><th>지역</th><th>업체전화번호</th>
 		</tr>
 		</thead>
 		<tbody id="menulist">
@@ -59,19 +60,25 @@ function login(){
 	window.open("loginpop.jsp", "width=450, height=200");
 }
 
-const menulist = document.querySelector("#menu").value;
-
-function listnow(){
+const menus = document.querySelector("#menu").value;
+const menulist = document.querySelector("#menulist");
+const view = document.querySelector("#view").value;
+alert(view)
+alert(menus)
+window.onload = function(){
 	const xhttp = new XMLHttpRequest();
-	xhttp.onload = function(){
-		let obj = JSON.parse(this.responseText);
-		alert(obj);
-		for(let i=0; i < obj.length; i++){
-			menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].companytel + "</td></tr>";
+	if(view == 1){		
+		xhttp.onload = function(){
+			let obj = JSON.parse(this.responseText);
+			for(let i=0; i < obj.length; i++){
+				menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
+			}
 		}
+	}else{
+		
 	}
 	
-	xhttp.open("GET", "MenuListServlet?type=" + menulist);
+	xhttp.open("GET", "MenuListServlet?type=" + menus);
 	xhttp.send();
 }
 
@@ -122,13 +129,16 @@ function click1(event) {
 		   alert("말라이 탕꿔이.")
 	   }else if(target.id == "dessert"){
 		   alert("소금빵 먹고싶노.")
-	   }
-	   
+	   }	   
 	   
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
+		let obj = JSON.parse(this.responseText);
+		for(let i=0; i < obj.length; i++){
+			menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
+		}
 	}
-	xhttp.open("GET", "ajax_info.txt", true);
+	xhttp.open("GET",  "MenuListServlet?type=" + target.id, true);
 	xhttp.send();
 }
 

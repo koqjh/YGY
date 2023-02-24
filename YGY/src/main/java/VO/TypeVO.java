@@ -6,6 +6,7 @@ import lombok.Data;
 public class TypeVO {
 	private String type;
 	private String companyname;
+	private String area;
 	private String bossname;
 	private String companytel;
 	private String businesslicense;

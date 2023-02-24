@@ -21,6 +21,7 @@ public class MenuDAO {
 				TypeVO vo = new TypeVO();
 				vo.setType(rs.getString("type"));
 				vo.setCompanyname(rs.getString("companyname"));
+				vo.setArea(rs.getString("area"));
 				vo.setCompanytel(rs.getString("companytel"));
 				Tlist.add(vo);
 			}
