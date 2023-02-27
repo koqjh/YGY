@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String id = (String)session.getAttribute("id"); %>
 <% String menu = request.getParameter("id");%>
+<% String num = request.getParameter("num");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +14,18 @@
 <body>
 <h1><a href="main.jsp">요기요</a></h1>
 <hr>
+<%	
+	if(id == null){
+%>
+<a href="main.jsp" onclick="login()">로그인</a>
+<%
+	}else if(id != null){
+%>
+<%=id %>/<a href="logoutForm.jsp">로그아웃</a>
+<%
+	}
+%>
 	<div>
-		<input type="button" value="로그인" onclick="login()">
 		<input type="hidden" id="menu" value="<%=menu %>">
 	</div>
 	<div id="list">
@@ -41,7 +53,7 @@
 		</ul>
 	</div>
 <form>
-	<input type="hidden" id="view" value="1">
+	<input type="hidden" id="view" value="<%=num%>">
 	<table border="1">
 		<thead>
 		<tr>
@@ -65,30 +77,29 @@ const menulist = document.querySelector("#menulist");
 const view = document.querySelector("#view").value;
 alert(view)
 alert(menus)
-window.onload = function(){
-	const xhttp = new XMLHttpRequest();
-	if(view == 1){		
-		xhttp.onload = function(){
-			let obj = JSON.parse(this.responseText);
-			for(let i=0; i < obj.length; i++){
-				menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
-			}
-		}
-	}else{
-		
-	}
-	
-	xhttp.open("GET", "MenuListServlet?type=" + menus);
-	xhttp.send();
-}
 
 const clicks = document.querySelector("#list");
 const divid = clicks.id;
 
 clicks.addEventListener("click", click1);
 
+window.onload = function(){	
+	const xhttp = new XMLHttpRequest();	
+	if(view == 1){
+		xhttp.onload = function(){
+			let obj = JSON.parse(this.responseText);
+			for(let i=0; i < obj.length; i++){
+				menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
+			}
+		}
+	}
+	
+	xhttp.open("GET", "MenuListServlet?type=" + menus);
+	xhttp.send();
+}
 function click1(event) {
 	let target = event.target;
+		
 	   if(target.id == "1inboon"){
 		   alert("1인분 나왔다");
 	   }else if(target.id == "chicken"){
@@ -129,8 +140,7 @@ function click1(event) {
 		   alert("말라이 탕꿔이.")
 	   }else if(target.id == "dessert"){
 		   alert("소금빵 먹고싶노.")
-	   }	   
-	   
+	   }
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
 		let obj = JSON.parse(this.responseText);
@@ -141,8 +151,6 @@ function click1(event) {
 	xhttp.open("GET",  "MenuListServlet?type=" + target.id, true);
 	xhttp.send();
 }
-
-
 </script>
 </body>
 </html>

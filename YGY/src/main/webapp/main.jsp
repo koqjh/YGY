@@ -12,16 +12,25 @@
 <body>
 <h1><a href="main.jsp">요기요</a></h1>
 <hr>
+<%	
+	if(id == null){
+%>
 <a href="main.jsp" onclick="login()">로그인</a>
+<%
+	}else if(id != null){
+%>
 <%=id %>/<a href="">로그아웃</a>
+<%
+	}
+%>
 <form>
 	<table border="1">
-		<tr>			
+		<tr>
 			<th>
 				<a href="menu.jsp?id=1indoon">1인분</a>				
 			</th>
-			<th><a href="menu.jsp?id=chicken"><img src="img/메인페이지/메인페이지 치킨 로고.jpg"></a></th>
-			<th><a href="menu.jsp?id=pizza"><img src="img/메인페이지/메인페이지 피자 로고.jpg"></a></th>
+			<th><a href="menu.jsp?id=chicken&num=1"><img src="img/메인페이지/메인페이지 치킨 로고.jpg"></a></th>
+			<th><a href="menu.jsp?id=pizza&num=1"><img src="img/메인페이지/메인페이지 피자 로고.jpg"></a></th>
 			<th><a href="menu.jsp?id=hamburger"><img src="img/메인페이지/메인페이지 햄버거 로고.jpg"></a></th>
 		</tr>
 		<tr>
@@ -53,7 +62,7 @@
 <script>
 function login(){
 	alert("나와라잇");
-	window.open("loginpop.jsp", "width=450, height=200");
+	window.open("loginpop.jsp", "", "width=450, height=200");
 }
 </script>
 </body>
