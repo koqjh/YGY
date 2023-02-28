@@ -99,7 +99,6 @@ window.onload = function(){
 }
 function click1(event) {
 	let target = event.target;
-		
 	   if(target.id == "1inboon"){
 		   alert("1인분 나왔다");
 	   }else if(target.id == "chicken"){
@@ -141,15 +140,16 @@ function click1(event) {
 	   }else if(target.id == "dessert"){
 		   alert("소금빵 먹고싶노.")
 	   }
-	const xhttp = new XMLHttpRequest();
-	xhttp.onload = function() {
-		let obj = JSON.parse(this.responseText);
-		for(let i=0; i < obj.length; i++){
-			menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
+	   const xhttp = new XMLHttpRequest();
+		xhttp.onload = function() {
+			let obj = JSON.parse(this.responseText);
+			menulist.replaceChildren();
+			for(let i=0; i < obj.length; i++){
+				menulist.innerHTML += "<tr><td>" + obj[i].type + "</td><td>" + obj[i].companyname + "</td><td>" + obj[i].area + "</td><td>" + obj[i].companytel + "</td></tr>";
+			}
 		}
-	}
-	xhttp.open("GET",  "MenuListServlet?type=" + target.id, true);
-	xhttp.send();
+		xhttp.open("GET",  "MenuListServlet?type=" + target.id, true);
+		xhttp.send();
 }
 </script>
 </body>
