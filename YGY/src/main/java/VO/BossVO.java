@@ -6,6 +6,6 @@ import lombok.Data;
 public class BossVO {
 	private String id;
 	private String pw;
-	private String name;
+	private String bossname;
 	private int tel;
 }

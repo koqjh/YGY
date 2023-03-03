@@ -57,7 +57,7 @@
 	<table border="1">
 		<thead>
 		<tr>
-			<th>타입</th><th>업체명</th><th>지역</th><th>업체전화번호</th>
+			<th>상표</th><th>업체명</th><th>별점</th><th>리뷰 갯수</th><th>사장님 댓글 갯수</th><th>결제 방식</th><th>배달 최소 금액</th><th>할인금액(쿠폰)</th><th>서비스된 상호(세스코)</th><th>도착지까지 소요 예상시간</th>
 		</tr>
 		</thead>
 		<tbody id="menulist">
@@ -69,7 +69,7 @@
 <script>
 function login(){
 	alert("나와라잇");
-	window.open("loginpop.jsp", "width=450, height=200");
+	window.open("loginpop.jsp", "", "width=450, height=200");
 }
 
 const menus = document.querySelector("#menu").value;

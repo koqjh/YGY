@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,35 +10,41 @@
 <body>
 ${bed }
 <form action="RegBossServlet" method="post" name="frm">
-	<input type="hidden" name="hidden" id="hidden" value="0">
-	<input type="text" name="id" id="id" placeholder="아이디" value="${param.id }">
-	<input type="button" value="아이디 중복 체크" onclick="return idcheck()"><br>
-	<input type="text" name="pw" placeholder="비밀번호"><br>
-	<input type="text" name="name" placeholder="이름"><br>
-	<input type="text" name="tel" placeholder="전화번호 - 빼고 적어주세요"><br>
-	<input type="text" name="address" placeholder="주소"><br>
+	<input type="text" name="id" id="id" placeholder="아이디">
+	<input type="button" value="중복 확인" onclick="return idcheck()"><br>
+	<input type="hidden" name="idcheckin" value="iduncheck">
+	<div id="demo"></div>
+	<input type="text" name="pw" id="pw" placeholder="비밀번호"><br>
+	<input type="text" name="name" id="name" placeholder="이름"><br>
+	<input type="text" name="tel" id="tel" placeholder="전화번호 - 빼고 적어주세요"><br>
 	<input type="submit" value="회원가입" onclick="return click()"><br>
-	<a href="bossregistpop.jsp">사장님 회원가입</a>
 </form>
 <script>
 function idcheck(){
 	if(document.frm.id.value == ""){
 		alert("id를 입력하세요.");
 		document.frm.id.focus();
-		return;
+		return false;
+	}else{
+		document.querySelector("input[name='idcheckin']").value = "idcheck";
 	}
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
+		let no = document.getElementById("demo").innerHTML = this.responseText;
 		
 	}
-	let param = document.frm.id.value;				
+	let param = document.frm.id.value;
 	
-	xhttp.open("POST", "RegBossServlet?id=" + param);
+	xhttp.open("POST", "BossIdCheckServlet?id=" + param);
 	xhttp.send();
 }
 
 function click(){
-	if(document.frm.id.value == "") {
+	if(document.frm.idcheckin.value != "idcheck") {
+		alert("id중복 체크를 해주세요.");
+		document.frm.id.focus();
+		return false;
+	}else if(document.frm.id.value == "") {
 		alert("id를 입력하세요.");
 		document.frm.id.focus();
 		return false;
@@ -53,13 +60,9 @@ function click(){
 		alert("전화번호를 입력하세요.");
 		document.frm.tel.focus();
 		return false;
-	}else if(document.frm.address.value == "") {
-		alert("주소를 입력하세요.");
-		document.frm.address.focus();
-		return false;
 	}else{
-		self.close();
 		return true;
+		self.close();
 	}
 }
 </script>

@@ -12,6 +12,5 @@ public class TypeVO {
 	private String businesslicense;
 	private String menu;
 	private String review;
-	private String information;
-	
+	private String information;	
 }
