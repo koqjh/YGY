@@ -52,18 +52,21 @@
 			<li id="dessert">디저트</li>
 		</ul>
 	</div>
-<form>
+<form name="frm" action="" method="post">
 	<input type="hidden" id="view" value="<%=num%>">
 	<table border="1">
 		<thead>
 		<tr>
+			<th><input type="checkbox" id="all"></th>
 			<th>상표</th><th>업체명</th><th>별점</th><th>리뷰 갯수</th><th>사장님 댓글 갯수</th><th>결제 방식</th><th>배달 최소 금액</th><th>할인금액(쿠폰)</th><th>서비스된 상호(세스코)</th><th>도착지까지 소요 예상시간</th>
 		</tr>
 		</thead>
 		<tbody id="menulist">
 		
-		</tbody>
+		</tbody>		
 	</table>
+	<input type="button" value="장바구니담기">
+	<input type="submit" value="선택상품 일괄 등록">
 </form>
 	
 <script>
@@ -151,6 +154,26 @@ function click1(event) {
 		xhttp.open("GET",  "MenuListServlet?type=" + target.id, true);
 		xhttp.send();
 }
+
+const all = document.querySelector("#all");
+all.addEventListener("change", change);
+
+function change(){
+	const chks = document.querySelectorAll(".chk");
+	for(let i = 0; i < chks.length; i++){
+		chks[i].checked = all.checked;
+	}
+};
+
+const tbody = document.querySelector("#menulist");
+tbody.addEventListener("click", f);
+
+function f(e){
+	if(e.target.value == "장바구니담기"){
+		alert(e.target.parentElement.parentElement.firstElementChild.nextElementSibling.innerText);		
+		document.frm.submit();
+	}
+};
 </script>
 </body>
 </html>

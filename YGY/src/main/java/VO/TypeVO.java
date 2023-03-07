@@ -7,6 +7,7 @@ public class TypeVO {
 	private String type;
 	private String companyname;
 	private String area;
+	private String logo;
 	private String bossname;
 	private String companytel;
 	private String businesslicense;

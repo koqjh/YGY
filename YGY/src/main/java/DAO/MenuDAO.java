@@ -35,16 +35,17 @@ public class MenuDAO {
 		Connection con = DBcon.getConnection();
 		
 		try {
-			PreparedStatement stmt = con.prepareStatement("INSERT INTO type_tbl(type, companyname, area, bossname, companytel, businesslicense, menu, review, information) VALUES(?,?,?,?,?,?,?,?,?)");
+			PreparedStatement stmt = con.prepareStatement("INSERT INTO type_tbl(type, companyname, area, logo, bossname, companytel, businesslicense, menu, review, information) VALUES(?,?,?,?,?,?,?,?,?,?)");
 			stmt.setString(1, vo.getType());
 			stmt.setString(2, vo.getCompanyname());
 			stmt.setString(3, vo.getArea());
-			stmt.setString(4, vo.getBossname());
-			stmt.setString(5, vo.getCompanytel());
-			stmt.setString(6, vo.getBusinesslicense());
-			stmt.setString(7, vo.getMenu());
-			stmt.setString(8, vo.getReview());
-			stmt.setString(9, vo.getInformation());
+			stmt.setString(4, vo.getLogo());
+			stmt.setString(5, vo.getBossname());
+			stmt.setString(6, vo.getCompanytel());
+			stmt.setString(7, vo.getBusinesslicense());
+			stmt.setString(8, vo.getMenu());
+			stmt.setString(9, vo.getReview());
+			stmt.setString(10, vo.getInformation());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
