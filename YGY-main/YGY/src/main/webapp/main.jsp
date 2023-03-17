@@ -68,7 +68,7 @@
 	<a href="ygyboss.jsp">요기요사장님</a>
 	<a href="importpoint">입점문의</a>
 	<a href="announcement">공지사항</a>
-	<!-- 올라가자 2-->
+	<!-- 올라가자 -->
 </div>
 <footer>
 <h1>요기요</h1>
