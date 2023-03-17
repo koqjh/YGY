@@ -1,0 +1,20 @@
+*{
+	margin : 0;
+	padding : 0;
+}
+
+#menu{
+	width: 1600px;
+	margin: 150px auto;
+	color : blue;
+}
+
+#list > ul{
+	list-style:neno;
+}
+
+#list > ul > li{
+	display:inline;
+	border-left: 1px solid white;
+	color : red;
+}

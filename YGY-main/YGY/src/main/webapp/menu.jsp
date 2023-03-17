@@ -155,6 +155,13 @@ function click1(event) {
 		xhttp.send();
 }
 
+menulist.addEventListener("click", clickmenu);
+
+function clickmenu(event) {
+	let target = event.target.parentElement.children.innerHTML;
+	alert(target);
+}
+
 const all = document.querySelector("#all");
 all.addEventListener("change", change);
 
