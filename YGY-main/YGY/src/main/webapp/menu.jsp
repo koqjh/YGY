@@ -58,7 +58,7 @@
 		<thead>
 		<tr>
 			<th><input type="checkbox" id="all"></th>
-			<th>상표</th><th>업체명</th><th>별점</th><th>리뷰 갯수</th><th>사장님 댓글 갯수</th><th>결제 방식</th><th>배달 최소 금액</th><th>할인금액(쿠폰)</th><th>서비스된 상호(세스코)</th><th>도착지까지 소요 예상시간</th>
+			<th>상표</th><th>업체명</th><th>별점</th><th>리뷰</th><th>사장님 댓글 갯수</th><th>결제 방식</th><th>배달 최소 금액</th><th>할인금액(쿠폰)</th><th>서비스된 상호(세스코)</th><th>도착지까지 소요 예상시간</th>
 		</tr>
 		</thead>
 		<tbody id="menulist">
@@ -68,7 +68,7 @@
 	<input type="button" value="장바구니담기">
 	<input type="submit" value="선택상품 일괄 등록">
 </form>
-	
+<%@ include file="footer/footer.jsp" %>
 <script>
 function login(){
 	alert("나와라잇");
