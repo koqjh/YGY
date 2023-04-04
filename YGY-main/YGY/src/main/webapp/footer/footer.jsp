@@ -11,13 +11,13 @@
 <footer>
 <div id="sidefooter">
 	<hr>
-	<a href="conditions.jsp">이용약관</a> |
-	<a href="informationprocessing.jsp">개인정보처리방침</a> |
-	<a href="point.jsp">포인트정책</a> |
-	<a href="introduction.jsp">회사소개</a> |
-	<a href="ygyboss.jsp">요기요사장님</a> |
-	<a href="importpoint">입점문의</a> |
-	<a href="announcement">공지사항</a>
+	<a href="footer/conditions.jsp">이용약관</a> |
+	<a href="footer/informationprocessing.jsp">개인정보처리방침</a> |
+	<a href="footer/point.jsp">포인트정책</a> |
+	<a href="footer/introduction.jsp">회사소개</a> |
+	<a href="bosslogin.jsp">요기요사장님</a> |
+	<a href="footer/importpoint.jsp">입점문의</a> |
+	<a href="footer/announcement.jsp">공지사항</a>
 	<hr>
 </div>
 <h1>요기요</h1>
